@@ -1,0 +1,436 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css" /><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css" /><link rel="shortcut icon" href="../assets/favicon/favicon.ico?v=RyQ5xz7ege" />
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    </head>
+<body>
+    <form name="aspnetForm" method="post" action="./MonthlyActivity.aspx?LetterSerial=n%2byB43ugxAB7oXB%2bgXYPNA%3d%3d" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=N25n0PTVGUEk6ePQY2LvSQBQYc9dEc01TajxZawOwrYsTu4xObHhp-vgWBOVls0UMSXz-gMheUg-TaTFBZ7dcnmphzU1&amp;t=637729750233813844" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=VPhnXuNOaYZbBtATbj-W2re4kobcC4ZVbW8SDyYN4KMA8S2sJWEnuezB0LQYgLLR6FB_LIBwM7M0JRXBm15M2FGCOoogzGVH7q__yqmz06_Npuk2e6ClVuFnnexh5Z8lIj7RO2RzVxaPZY98SLyIo_Rpl541&amp;t=fffffffff812781c" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=qnAnFIdi5k_nCvv_oxamJIqokPfCC20ouZ64F-NMYMwwVit0Ao2o1rNq3uemnSoZi3qvjIYO5f8kVdJtmHjC7d-CdXznX5KmwIN4e6la9dy21i89FHOW28KsT3G7RHek_OZIbZ93lMNouJNFI08JZHR0a5xYS1Ycb8sptb5nbUaSRU1K0&amp;t=ffffffff8333b97c" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=91wdw4dIbjLdnLbspRtUK5zJyxqL_0D117HD0q9sxfeEk1WWtOhR_D6R93R-cLzG6hQ8HHRreYxFwtyHF45rPMMh_lLoYb4RfuQVwAhqg_EB_VxVKv0atnutGzqo7HIUu3MFogh0aSubLpcZOOfu-fh5xsTqpC5auO4FPgTNlduOJZlepE5epoHJPVgy1JYcNLxA0w2&amp;t=ffffffff8333b97c" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="800C55C3" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="" />
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src='../imgs/header_icon.png' alt="icon" />
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddlTable\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000005">گزارش فعالیت ماهانه</option>
+
+</select>
+            <input type="submit" name="ctl00$btnPervPage" value="" onclick="btnPrevClick();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$btnPervPage&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_btnPervPage" title="صفحه قبلی" class="prev_report" />
+            <input type="submit" name="ctl00$btnNextPage" value="" onclick="btnNextClick();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$btnNextPage&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_btnNextPage" title="صفحه بعدی" class="next_report" />
+        </div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="../ChangeCulture.aspx?lng=en-US&amp;selectedValue=1000005" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint" />
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">توسعه حمل و نقل ريلي پارسيان</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">250,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">حپارسا</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">601005</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px; display:inline-flex">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>&nbsp
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>  
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblInDate" class="label" style="display:none;">در تاریخ </span>  
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir=ltr>1396/08/30</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir=ltr>1397/06/31</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در فرابورس ايران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src='../imgs/inforation.png' />
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0" />
+   
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;" />
+    </div>
+    <div class="clear">
+    </div>
+    
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <div id="ctl00_cphBody_divMainContainer" style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br />
+
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                
+
+<div includeInExcel="true">
+    <table id="ctl00_cphBody_ucService1_Table1" cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td colspan="10">
+                <span id="ctl00_cphBody_ucService1_lblProductionMsg" class="notify" style="display:none;"></span>
+            </td>
+	</tr>
+	<tr>
+		<td colspan="10">
+                <table width="100%" align="center" class="gv">
+                    <tr>
+                            <th id="ctl00_cphBody_ucService1_thServiceContractNameCaption" rowspan="2" align="center" style="width: 15%;">
+                            <span id="ctl00_cphBody_ucService1_lblServiceContractNameCaption">شرح خدمات یا فروش</span>
+                        </th>
+		
+                            <th id="ctl00_cphBody_ucService1_thContarctCaption" align="center" colspan="2">
+                            <span id="ctl00_cphBody_ucService1_lblContarctCaption">قراردادها</span>
+                        </th>
+		
+                            <th align="center" colspan="6">
+                            <span id="ctl00_cphBody_ucService1_lblRevenueRecognizedCaption">درآمد شناسایی شده</span>
+                        </th>
+                        <th rowspan="2" align="center" style="width: 10%;">
+                            <span id="ctl00_cphBody_ucService1_lblDescCaption">توضیحات</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="center" style="width: 13%;">
+                            <span id="ctl00_cphBody_ucService1_lblContractDateCaption">تاریخ عقد قرارداد</span>
+                        </th>
+                        <th align="center" style="width: 10%;">
+                            <span id="ctl00_cphBody_ucService1_lblContractDurationCaption">مدت قرارداد (ماه)</span>
+                        </th>
+                            <th id="ctl00_cphBody_ucService1_thContractAmountCaption" align="center" style="width: 10%;">
+                            <span id="ctl00_cphBody_ucService1_lblContractAmountCaption">پیش بینی درآمد حاصل از قرارداد در سال مالی جاری</span>
+                        </th>
+		
+                            <th id="ctl00_cphBody_ucService1_thAnticipatedContractCaption" align="center" style="width: 10%;">
+                            <span id="ctl00_cphBody_ucService1_lblAnticipatedContractCaption">پیش بینی بهای تمام شده قرارداد در سال مالی جاری</span>
+                        </th>
+		
+                            <th id="ctl00_cphBody_ucService1_thBeginningLastPeriod" align="center" style="display:none;width:0;">
+                                <span id="ctl00_cphBody_ucService1_lblBeginningLastPeriod">درآمد شناسایی شده از اول سال مالی تا پایان دوره مالی منتهی به 1396/07/30</span>
+                            </th>
+		
+                            <th id="ctl00_cphBody_ucService1_thRevenueDiff" align="center" style="display:none;width:0;">
+                                <span id="ctl00_cphBody_ucService1_lblRevenueDiff">اصلاحات</span>
+                            </th>
+		
+                            <th id="ctl00_cphBody_ucService1_thEndOfTheFinancialLastPeriod" align="center" style="display:none;width:0;">
+                                <span id="ctl00_cphBody_ucService1_lblEndOfTheFinancialLastPeriod">درآمد شناسایی شده از اول سال مالی تا پایان دوره مالی منتهی به 1396/07/30-اصلاح شده</span>
+                            </th>
+		
+
+                        <th align="center" style="width: 10%;">
+                            <span id="ctl00_cphBody_ucService1_lblRevenueDuringThePeriodCaption">درآمد شناسایی شده طی دوره یک ماهه منتهی به 1396/08/30</span>
+                        </th>
+                        <th align="center" style="width: 10%;">
+                            <span id="ctl00_cphBody_ucService1_lblRevenueFromTheBeginningCaption">درآمد شناسایی شده از اول سال مالی تا پایان دوره مالی منتهی به 1396/08/30</span>
+                        </th>
+                        <th align="center" style="width: 10%;">
+                            <span id="ctl00_cphBody_ucService1_lblRevenueEndOfTheFinancialPeriodCaption">درامد شناسایی شده تا پایان دوره مالی منتهی به 1396/06/31</span>
+                        </th>
+                    </tr>
+                </table>
+            </td>
+	</tr>
+	<tr>
+		<td colspan="10">
+                <div style="width: 100%">
+                    <div>
+			<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucService1_dgContract" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+				<tr>
+					<td align="right" style="width:0%;width:0%;display:none;">3957</td><td align="right" style="width:15%;">حمل و نقل (بهران)</td><td align="center" style="width:13%;">۱۳۹۶/۰۵/۰۱</td><td align="center" style="width:10%;">۱۲</td><td align="center" style="width:10%;">۱۱۸,۰۰۰</td><td align="center" style="width:10%;">۷۸,۰۰۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:10%;">۷,۷۰۰</td><td align="center" style="width:10%;">۱۴,۶۴۸</td><td align="center" style="width:10%;">۱۰۱,۲۰۴</td><td align="center" style="width:10%;">&nbsp;</td>
+				</tr><tr>
+					<td align="right" style="width:0%;width:0%;display:none;">3960</td><td align="right" style="width:15%;">حمل ونقل(شرکت کالاي پتروشيمي)</td><td align="center" style="width:13%;">۱۳۹۶/۰۷/۰۱</td><td align="center" style="width:10%;">۱</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:10%;">۶,۲۴۳</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:10%;">&nbsp;</td>
+				</tr><tr>
+					<td align="right" style="width:0%;width:0%;display:none;">3956</td><td align="right" style="width:15%;">حمل و نقل (شرکت پخش)</td><td align="center" style="width:13%;">۱۳۹۶/۰۴/۰۱</td><td align="center" style="width:10%;">۱۲</td><td align="center" style="width:10%;">۹۰۱,۶۵۰</td><td align="center" style="width:10%;">۷۱۱,۹۰۶</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:10%;">۶۲,۹۹۹</td><td align="center" style="width:10%;">۱۱۹,۵۹۰</td><td align="center" style="width:10%;">۸۰۰,۹۹۱</td><td align="center" style="width:10%;">&nbsp;</td>
+				</tr><tr>
+					<td align="right" style="width:0%;width:0%;display:none;">3961</td><td align="right" style="width:15%;">حمل ونقل(شرکت بندرعباس گسترجنوب)</td><td align="center" style="width:13%;">۱۳۹۶/۰۶/۰۱</td><td align="center" style="width:10%;">۷</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:10%;">۲,۷۰۸</td><td align="center" style="width:10%;">۱۲,۲۱۱</td><td align="center" style="width:10%;">&nbsp;</td>
+				</tr><tr>
+					<td align="right" style="width:0%;width:0%;display:none;">3958</td><td align="right" style="width:15%;">صدور بارنامه (ايران گاز)</td><td align="center" style="width:13%;">۱۳۹۶/۰۴/۰۱</td><td align="center" style="width:10%;">۱۲</td><td align="center" style="width:10%;">۲۳,۰۰۰</td><td align="center" style="width:10%;">۲۱,۰۰۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:10%;">۱,۵۰۰</td><td align="center" style="width:10%;">۲,۷۶۵</td><td align="center" style="width:10%;">۱۵,۵۷۷</td><td align="center" style="width:10%;">&nbsp;</td>
+				</tr><tr class="lightBlueBg">
+					<td align="right" style="width:0%;width:0%;display:none;">-1</td><td align="right" style="width:15%;">جمع</td><td align="center" style="width:13%;">&nbsp;</td><td align="center" style="width:10%;">۰</td><td align="center" style="width:10%;">۱,۰۴۲,۶۵۰</td><td align="center" style="width:10%;">۸۱۰,۹۰۶</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:8%;display:none;width:0;">۰</td><td align="center" style="width:10%;">۷۲,۱۹۹</td><td align="center" style="width:10%;">۱۴۵,۹۵۴</td><td align="center" style="width:10%;">۹۲۹,۹۸۳</td><td align="center" style="width:10%;">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+                </div>
+            </td>
+	</tr>
+</table>
+
+</div>
+            
+        <div class="clear" style="height: 20px;"></div>
+        <div id="ctl00_cphBody_divLetterDescriptionContainer">
+            
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1396/08/30</span></legend>
+                <br />
+                <span id="txbDescMonth"></span>
+            </fieldset>
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1396/08/30</span></legend>
+                <br />
+                <span id="txbDescYear"></span>
+            </fieldset>
+        </div>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+</body>
+</html>

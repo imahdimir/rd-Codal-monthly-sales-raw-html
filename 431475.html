@@ -1,0 +1,456 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src='../imgs/header_icon.png' alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddlTable\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
+
+</select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=A89u4XEBlaTQQQaQQQqBthmowNqA%3d%3d&rt=0&let=58&ct=0&ft=-1&lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">فجر انرژي خليج فارس</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">6,500,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">بفجر</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">401102</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px; display:inline-flex">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>&nbsp
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>  
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblInDate" class="label" style="display:none;">در تاریخ</span>  
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1396/12/29</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1396/12/29</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src='../imgs/inforation.png'>
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div id="ctl00_cphBody_divMainContainer" style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucProduct1_pnlProduction">
+	
+
+        <script language="javascript" type="text/javascript" src="../../js/PKI.js"></script>
+
+        <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
+
+        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right" includeinexcel="true">
+            <table id="ctl00_cphBody_ucProduct1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
+		<tr>
+			<td>
+                        <span id="ctl00_cphBody_ucProduct1_lblProductionMsg" class="notify error" style="display:none;"></span>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <table width="100%" align="center" class="gv">
+                            <tr>
+                                <th colspan="6" align="center" style="width: 49%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblMonthEndToDateCaption">دوره یک ماهه منتهی به <bdo dir='ltr'>1396/12/29</bdo></span>
+                                </th>
+                                <th colspan="4" align="center" style="width: 51%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir='ltr'>1396/12/29</bdo></span>
+                                </th>
+                                
+                            </tr>
+                            <tr>
+                                <th align="center" style="width: 13.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblProductNameCaption">نام محصول</span>
+                                </th>
+                                <th align="center" style="width: 5.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblProductUnitCaption">واحد</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalProdctionMonthCaption">تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalSalesMonthCaption">تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesRateMonthCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesAmountMonthCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalProductionYearCaption">تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalSalesYearCaption">تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 11.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                
+                            </tr>
+                        </table>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <div>
+                            <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+					<tr>
+						<td align="center" style="width:13.8%;">بخار</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۴۳۷,۷۸۷</td><td align="center" style="width:9.8%;">۳۷۴,۶۹۹</td><td align="center" style="width:9.8%;">۵۲۴,۸۸۰</td><td align="center" style="width:9.8%;">۱۹۶,۶۷۲</td><td align="center" style="width:9.8%;">۵,۲۹۵,۷۱۲</td><td align="center" style="width:9.8%;">۴,۵۵۸,۸۳۵</td><td align="center" style="width:9.8%;">۵۳۹,۰۲۵</td><td align="center" style="width:11.8%;">۲,۴۵۷,۳۲۵</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آب DM</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۲۴۶,۸۷۹</td><td align="center" style="width:9.8%;">۷۳۹,۹۵۹</td><td align="center" style="width:9.8%;">۱۱۷,۱۵۸</td><td align="center" style="width:9.8%;">۸۶,۶۹۲</td><td align="center" style="width:9.8%;">۱۴,۵۰۹,۳۶۸</td><td align="center" style="width:9.8%;">۸,۴۰۰,۷۶۷</td><td align="center" style="width:9.8%;">۱۱۵,۸۰۰</td><td align="center" style="width:11.8%;">۹۷۲,۸۰۶</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">اکسيژن گازي </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱۹,۶۳۹,۹۹۹</td><td align="center" style="width:9.8%;">۱۹,۱۸۹,۳۳۴</td><td align="center" style="width:9.8%;">۱,۴۱۲</td><td align="center" style="width:9.8%;">۲۷,۱۰۴</td><td align="center" style="width:9.8%;">۲۴۳,۹۶۴,۴۲۳</td><td align="center" style="width:9.8%;">۲۱۶,۳۳۹,۹۹۷</td><td align="center" style="width:9.8%;">۱,۳۵۹</td><td align="center" style="width:11.8%;">۲۹۳,۹۵۸</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">ازت گازي </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۹,۲۶۱,۱۳۲</td><td align="center" style="width:9.8%;">۲۳,۹۵۷,۴۴۱</td><td align="center" style="width:9.8%;">۱,۸۵۵</td><td align="center" style="width:9.8%;">۴۴,۴۳۸</td><td align="center" style="width:9.8%;">۳۶۵,۵۴۶,۸۰۵</td><td align="center" style="width:9.8%;">۲۹۵,۲۳۳,۵۶۴</td><td align="center" style="width:9.8%;">۱,۸۷۷</td><td align="center" style="width:11.8%;">۵۵۴,۲۱۳</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">هواي ابزار دقيق</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱۵,۵۲۷,۳۰۵</td><td align="center" style="width:9.8%;">۱۴,۰۲۵,۱۴۳</td><td align="center" style="width:9.8%;">۹۷۰</td><td align="center" style="width:9.8%;">۱۳,۶۰۱</td><td align="center" style="width:9.8%;">۲۰۰,۲۶۴,۹۲۵</td><td align="center" style="width:9.8%;">۱۸۱,۶۷۳,۲۱۱</td><td align="center" style="width:9.8%;">۱,۰۴۵</td><td align="center" style="width:11.8%;">۱۸۹,۸۲۵</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">هواي سرويس</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۸,۶۷۲,۴۹۷</td><td align="center" style="width:9.8%;">۱۰,۰۴۳,۳۹۷</td><td align="center" style="width:9.8%;">۵۸۵</td><td align="center" style="width:9.8%;">۵,۸۷۹</td><td align="center" style="width:9.8%;">۳۷۰,۸۹۵,۷۴۹</td><td align="center" style="width:9.8%;">۱۲۷,۱۳۷,۶۹۶</td><td align="center" style="width:9.8%;">۶۰۲</td><td align="center" style="width:11.8%;">۷۶,۴۸۹</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آب RO</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲,۰۵۸,۳۳۷</td><td align="center" style="width:9.8%;">۹۲۷,۷۶۵</td><td align="center" style="width:9.8%;">۶۱,۷۳۱</td><td align="center" style="width:9.8%;">۵۷,۲۷۲</td><td align="center" style="width:9.8%;">۲۵,۷۷۸,۳۳۵</td><td align="center" style="width:9.8%;">۱۲,۹۶۴,۳۲۲</td><td align="center" style="width:9.8%;">۶۳,۰۳۹</td><td align="center" style="width:11.8%;">۸۱۷,۲۶۴</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آب بهداشتي </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۷۷,۹۷۵</td><td align="center" style="width:9.8%;">۶۳,۰۰۰</td><td align="center" style="width:9.8%;">۷۰,۶۸۳</td><td align="center" style="width:9.8%;">۴,۴۵۳</td><td align="center" style="width:9.8%;">۱,۱۴۹,۰۶۱</td><td align="center" style="width:9.8%;">۹۷۵,۶۳۶</td><td align="center" style="width:9.8%;">۷۶,۱۲۸</td><td align="center" style="width:11.8%;">۷۴,۲۷۳</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آب سرويس</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۷۹,۷۰۴</td><td align="center" style="width:9.8%;">۶۴,۷۰۴</td><td align="center" style="width:9.8%;">۵۴,۰۰۰</td><td align="center" style="width:9.8%;">۳,۴۹۴</td><td align="center" style="width:9.8%;">۱,۰۲۲,۹۰۵</td><td align="center" style="width:9.8%;">۸۴۴,۹۲۷</td><td align="center" style="width:9.8%;">۵۵,۹۱۶</td><td align="center" style="width:11.8%;">۴۷,۲۴۵</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آرگون</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۰۳</td><td align="center" style="width:9.8%;">۲۴۱</td><td align="center" style="width:9.8%;">۱۴,۵۱۰,۳۷۳</td><td align="center" style="width:9.8%;">۳,۴۹۷</td><td align="center" style="width:9.8%;">۱,۷۶۷</td><td align="center" style="width:9.8%;">۱,۸۸۳</td><td align="center" style="width:9.8%;">۱۴,۵۰۲,۹۲۱</td><td align="center" style="width:11.8%;">۲۷,۳۰۹</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آب آتشنشاني </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱۱۱,۵۰۹</td><td align="center" style="width:9.8%;">۱۱۲,۸۱۴</td><td align="center" style="width:9.8%;">۳۴,۰۵۶</td><td align="center" style="width:9.8%;">۳,۸۴۲</td><td align="center" style="width:9.8%;">۱,۵۹۱,۴۸۹</td><td align="center" style="width:9.8%;">۱,۵۹۱,۴۸۹</td><td align="center" style="width:9.8%;">۲۸,۹۷۱</td><td align="center" style="width:11.8%;">۴۶,۱۰۷</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">برق </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۴۰۵,۰۴۲</td><td align="center" style="width:9.8%;">۳۶۵,۶۴۱</td><td align="center" style="width:9.8%;">۱,۷۴۵,۱۳۳</td><td align="center" style="width:9.8%;">۶۳۸,۰۹۲</td><td align="center" style="width:9.8%;">۵,۱۳۵,۰۷۹</td><td align="center" style="width:9.8%;">۴,۸۴۳,۶۷۷</td><td align="center" style="width:9.8%;">۱,۶۴۴,۵۶۳</td><td align="center" style="width:11.8%;">۷,۹۶۵,۷۳۱</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آب برجهاي خنک کننده</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۴۳۵,۴۷۶</td><td align="center" style="width:9.8%;">۱,۴۳۵,۴۷۶</td><td align="center" style="width:9.8%;">۵۷,۶۷۹</td><td align="center" style="width:9.8%;">۸۲,۷۹۷</td><td align="center" style="width:9.8%;">۱۵,۸۹۴,۷۲۳</td><td align="center" style="width:9.8%;">۱۵,۸۹۴,۷۲۳</td><td align="center" style="width:9.8%;">۶۱,۵۶۷</td><td align="center" style="width:11.8%;">۹۷۸,۵۹۵</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">تصفيه پساب LTDS</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۳۹۴,۸۹۶</td><td align="center" style="width:9.8%;">۳۹۴,۸۹۶</td><td align="center" style="width:9.8%;">۳۳,۳۸۱</td><td align="center" style="width:9.8%;">۱۳,۱۸۲</td><td align="center" style="width:9.8%;">۳,۹۸۸,۲۶۵</td><td align="center" style="width:9.8%;">۳,۹۸۸,۲۶۵</td><td align="center" style="width:9.8%;">۴۲,۰۹۲</td><td align="center" style="width:11.8%;">۱۶۷,۸۷۳</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">تصفيه پساب HTDS</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۷۷,۸۹۲</td><td align="center" style="width:9.8%;">۷۷,۸۹۲</td><td align="center" style="width:9.8%;">۷۰,۰۹۷</td><td align="center" style="width:9.8%;">۵,۴۶۰</td><td align="center" style="width:9.8%;">۷۰۵,۸۰۳</td><td align="center" style="width:9.8%;">۷۰۵,۸۰۳</td><td align="center" style="width:9.8%;">۱۰۶,۱۴۲</td><td align="center" style="width:11.8%;">۷۴,۹۱۵</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">تصفيه پساب بهداشتي </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۳۷,۱۹۵</td><td align="center" style="width:9.8%;">۳۷,۱۹۵</td><td align="center" style="width:9.8%;">۱۷۹,۳۵۲</td><td align="center" style="width:9.8%;">۶,۶۷۱</td><td align="center" style="width:9.8%;">۵۲۲,۰۶۱</td><td align="center" style="width:9.8%;">۵۲۲,۰۶۱</td><td align="center" style="width:9.8%;">۱۲۸,۲۳۸</td><td align="center" style="width:11.8%;">۶۶,۹۴۸</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">آب خوراک بويلرهاي ( BFW)</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۴۷۵,۷۷۰</td><td align="center" style="width:9.8%;">۵۵,۱۵۲</td><td align="center" style="width:9.8%;">۲۶۹,۴۹۲</td><td align="center" style="width:9.8%;">۱۴,۸۶۳</td><td align="center" style="width:9.8%;">۵,۷۲۸,۵۹۰</td><td align="center" style="width:9.8%;">۵۸۷,۷۰۵</td><td align="center" style="width:9.8%;">۲۵۲,۹۰۲</td><td align="center" style="width:11.8%;">۱۴۸,۶۳۲</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;"> ازت مايع </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۳۷۲,۰۰۰</td><td align="center" style="width:9.8%;">۴۸۰,۱۶۰</td><td align="center" style="width:9.8%;">۲,۹۹۹</td><td align="center" style="width:9.8%;">۱,۴۴۰</td><td align="center" style="width:9.8%;">۱۸,۳۵۶,۰۰۰</td><td align="center" style="width:9.8%;">۵,۷۹۳,۶۷۰</td><td align="center" style="width:9.8%;">۳,۰۰۰</td><td align="center" style="width:11.8%;">۱۷,۳۸۱</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">کوره زباله سوز</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۲,۰۵۲,۰۰۰,۰۰۰</td><td align="center" style="width:9.8%;">۲,۰۵۲</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۲۴,۶۲۸,۰۰۰,۰۰۰</td><td align="center" style="width:11.8%;">۲۴,۶۲۸</td>
+					</tr><tr class="lightBlueBg">
+						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۲۱۱,۵۰۱</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">۱۵,۰۰۱,۵۱۷</td>
+					</tr>
+				</table>
+			</div>
+                        </div>
+                    </td>
+		</tr>
+	</table>
+	
+        </div>
+    
+</div>
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        <div id="ctl00_cphBody_divLetterDescriptionContainer">
+            
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1396/12/29</span></legend>
+                <br>
+                <span id="txbDescMonth">1) با توجه به مصرف يوتيليتي ( اضافه بر ديماند قرارداد) از طرف مشتريان ، مطابق قرارداد نرخ فروش محصولات مازاد بر مصرف دو برابر نرخ مصوب محاسبه و جهت مشتريان ارسال مي گردد، که اين امر باعث شده تا نرخ ميانگين فروش محصولات بيشتر از نرخ مصوب شود.2) محصول برق شامل برق اکتيو و راکتيو مي باشد. </span>
+            </fieldset>
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1396/12/29</span></legend>
+                <br>
+                <span id="txbDescYear">صورتحساب ديماند فروش محصولات سه ماهه محاسبه و صادر مي گردد بديهي است در صورتحساب آمار توليد و فروش ماهيانه محصولات ارائه نمي گردد.و در صورتهاي مالي تحت عنوان ساير درآمدهاي عملياتي ارائه مي گردد.</span>
+            </fieldset>
+        </div>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+</body>
+</html>
