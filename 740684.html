@@ -1,0 +1,615 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src='../imgs/header_icon.png' alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddlTable\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000001">گزارش فعالیت ماهانه
+
+</select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=4JOoEL8DSAFnpmESKv5HWQ%3d%3d&rt=1&let=58&ct=0&ft=-1&lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">سرمايه گذاري مسکن جنوب</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">900,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">ثجنوب</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">701069</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1400/01/31</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1400/06/31</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در فرابورس ايران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src='../imgs/inforation.png'>
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   <div id="ctl00_divPriceNote" class="note_price">
+        <p id="ctl00_pPriceNote">کلیه مبالغ درج شده به میلیون ریال می باشد</p>
+    </div>
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div id="ctl00_cphBody_divMainContainer" style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucBuilding1_pnlBuildingAssigned">
+	
+        <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
+        <script language="javascript" type="text/javascript" src="../../Publisher/JavaScript/jquery-1.3.2.min.js"></script>
+
+        <div id="ctl00_cphBody_ucBuilding1_divBuilding" align="right" includeinexcel="true">
+            <table id="ctl00_cphBody_ucBuilding1_Table1" cellpadding="0" cellspacing="0" border="0" align="right" dir="rtl" style="width: 100%; border-collapse: collapse;">
+		<tr>
+			<td colspan="17" style="margin: 5px; text-align: center"></td>
+		</tr>
+		<tr>
+			<td colspan="17" style="margin: 5px;">
+                        <span id="ctl00_cphBody_ucBuilding1_lblError" class="notify error"></span>
+                    </td>
+		</tr>
+		<tr>
+			<td colspan="17">
+                        <span id="ctl00_cphBody_ucBuilding1_lblBuildingAssignedHeader" style="font-size:Small;margin-bottom: 10px;">پروژه های واگذار شده :</span>
+                    </td>
+		</tr>
+		<tr>
+			<td colspan="17">
+                        <table id="ctl00_cphBody_ucBuilding1_tblBuildingAssignHeader" align="center" class="gv" style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<th rowspan="3">
+                                    <span id="ctl00_cphBody_ucBuilding1_lblHeaderProjectName"> نام پروژه</span>
+                                </th>
+					<th rowspan="3" style="width: 7%">
+                                    <span id="ctl00_cphBody_ucBuilding1_lblHeaderProjectPlace">محل پروژه</span>
+                                </th>
+					<th rowspan="3" style="width: 7%">
+                                    <span id="ctl00_cphBody_ucBuilding1_lblHeaderProjectUse">کاربری</span>
+                                </th>
+					<th rowspan="3" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_lblHeaderProjectUnit">واحد</span>
+                                </th>
+					<th colspan="6" style="height: 30px;">
+                                    <span id="ctl00_cphBody_ucBuilding1_lblHeaderMonth">فروردین ۱۴۰۰  </span>
+                                </th>
+					<th colspan="4" rowspan="2">
+                                    <span id="ctl00_cphBody_ucBuilding1_lblHeaderYear">   از ابتدای سال مالی تا پایان فروردین ماه  ۱۴۰۰ </span>
+                                </th>
+				</tr>
+				<tr>
+					<th colspan="4">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label2">فروش در ماه جاری</span>
+                                </th>
+					<th colspan="2" style="height: 33px;">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label3">تاثیرات پیشرفت واحدهای فروش رفته در ماههای قبل</span>
+                                </th>
+				</tr>
+				<tr>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label5">بهای تمام شده <br> (میلیون ریال)</span>
+                                </th>
+					<th style="width: 4.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label6">متراژ فروش</span>
+                                </th>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label7">نرخ فروش   <br> (ریال)</span>
+                                </th>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label8">مبلغ فروش <br> (میلیون ریال)</span>
+                                </th>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label4">بهای تمام شده شناسایی شده <br> (میلیون ریال)</span>
+                                </th>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label13">درآمد شناسایی شده <br> (میلیون ریال)</span>
+                                </th>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label9">بهای تمام شده  <br> (میلیون ریال)</span>
+                                </th>
+					<th style="width: 4.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label10">متراژ فروش</span>
+                                </th>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label11">نرخ فروش   <br> (ریال)</span>
+                                </th>
+					<th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_Label12">مبلغ فروش  <br> (میلیون ریال)</span>
+                                </th>
+				</tr>
+			</table>
+			
+                    </td>
+		</tr>
+		<tr>
+			<td colspan="17">
+                        <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucBuilding1_dgBuilding" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+					<tr>
+						<td align="center">برگشت از فروش</td><td align="center" style="width:7%;">&nbsp;</td><td align="center" style="width:7%;">مثلث</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td>
+					</tr><tr>
+						<td align="center">بوتيا</td><td align="center" style="width:7%;">کرمان</td><td align="center" style="width:7%;">مسکوني</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۱۳,۷۷۰</td><td align="center" style="width:4.5%;">۲۱۱</td><td align="center" style="width:7.5%;">۱۸۰,۵۸۷,۶۷۸</td><td align="center" style="width:7.5%;">۳۸,۱۰۴</td>
+					</tr><tr>
+						<td align="center">مثلث</td><td align="center" style="width:7%;">شيراز</td><td align="center" style="width:7%;">مسکوني</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td>
+					</tr><tr>
+						<td align="center">سايه </td><td align="center" style="width:7%;">شيراز</td><td align="center" style="width:7%;">مسکوني</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۱۳,۰۲۷</td><td align="center" style="width:7.5%;">۱۱,۴۲۹</td><td align="center" style="width:7.5%;">۲۴,۳۶۰</td><td align="center" style="width:4.5%;">۶۶۴</td><td align="center" style="width:7.5%;">۸۳,۵۷۲,۲۸۹</td><td align="center" style="width:7.5%;">۵۵,۴۹۲</td>
+					</tr><tr>
+						<td align="center">راين 1</td><td align="center" style="width:7%;">کرمان</td><td align="center" style="width:7%;">مسکوني</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۱,۲۹۸</td><td align="center" style="width:7.5%;">۲,۰۳۴</td><td align="center" style="width:7.5%;">۱۰,۶۰۴</td><td align="center" style="width:4.5%;">۸۲۳</td><td align="center" style="width:7.5%;">۸۳,۰۴۸,۶۰۳</td><td align="center" style="width:7.5%;">۶۸,۳۴۹</td>
+					</tr><tr>
+						<td align="center">ستاره فروردين (قطعه 69)</td><td align="center" style="width:7%;">کيش</td><td align="center" style="width:7%;">مسکوني</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۲,۱۵۶</td><td align="center" style="width:4.5%;">۹۰</td><td align="center" style="width:7.5%;">۳۰۸,۷۷۷,۷۷۸</td><td align="center" style="width:7.5%;">۲۷,۷۹۰</td><td align="center" style="width:7.5%;">۱,۶۱۱</td><td align="center" style="width:7.5%;">۷,۵۳۹</td><td align="center" style="width:7.5%;">۱۳,۷۹۱</td><td align="center" style="width:4.5%;">۶۴۸</td><td align="center" style="width:7.5%;">۳۹۸,۸۳۰,۲۴۷</td><td align="center" style="width:7.5%;">۲۵۸,۴۴۲</td>
+					</tr><tr>
+						<td align="center">ستاره مهرگان (قطعه 78-79)</td><td align="center" style="width:7%;">کيش</td><td align="center" style="width:7%;">مسکوني</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۹۳۶</td><td align="center" style="width:4.5%;">۸۴</td><td align="center" style="width:7.5%;">۱۷۶,۹۷۶,۱۹۰</td><td align="center" style="width:7.5%;">۱۴,۸۶۶</td><td align="center" style="width:7.5%;">۱۳۰</td><td align="center" style="width:7.5%;">۸۰۹</td><td align="center" style="width:7.5%;">۹۳۶</td><td align="center" style="width:4.5%;">۸۴</td><td align="center" style="width:7.5%;">۱۷۶,۹۷۶,۱۹۰</td><td align="center" style="width:7.5%;">۱۴,۸۶۶</td>
+					</tr><tr>
+						<td align="center">ستاره آبان (قطعه 80)</td><td align="center" style="width:7%;">کيش</td><td align="center" style="width:7%;">مسکوني</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۴۸</td><td align="center" style="width:7.5%;">۶۲۴</td><td align="center" style="width:7.5%;">۵,۵۱۹</td><td align="center" style="width:4.5%;">۱۹۷</td><td align="center" style="width:7.5%;">۵۱۰,۵۵۳,۲۹۹</td><td align="center" style="width:7.5%;">۱۰۰,۵۷۹</td>
+					</tr><tr>
+						<td align="center">آناهيتا</td><td align="center" style="width:7%;">شيراز</td><td align="center" style="width:7%;">&nbsp;</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۷۶۳</td><td align="center" style="width:4.5%;">۴۵</td><td align="center" style="width:7.5%;">۷۰,۰۶۶,۶۶۷</td><td align="center" style="width:7.5%;">۳,۱۵۳</td>
+					</tr><tr>
+						<td align="center">سروستان</td><td align="center" style="width:7%;">پرديس</td><td align="center" style="width:7%;">&nbsp;</td><td align="center" style="width:5%;">مترمربع</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۱۵,۱۸۷</td><td align="center" style="width:4.5%;">۱۱۴</td><td align="center" style="width:7.5%;">۱۳۳,۲۱۹,۲۹۸</td><td align="center" style="width:7.5%;">۱۵,۱۸۷</td>
+					</tr><tr class="lightBlueBg">
+						<td align="center">جمع</td><td align="center" style="width:7%;">&nbsp;</td><td align="center" style="width:7%;">&nbsp;</td><td align="center" style="width:5%;">&nbsp;</td><td align="center" style="width:7.5%;">۳,۰۹۲</td><td align="center" style="width:4.5%;">۱۷۴</td><td align="center" style="width:7.5%;">۴۸۵,۷۵۳,۹۶۸</td><td align="center" style="width:7.5%;">۴۲,۶۵۶</td><td align="center" style="width:7.5%;">۱۶,۱۱۴</td><td align="center" style="width:7.5%;">۲۲,۴۳۵</td><td align="center" style="width:7.5%;">۸۴,۹۳۰</td><td align="center" style="width:4.5%;">۲,۷۸۶</td><td align="center" style="width:7.5%;">۱,۶۳۶,۸۵۴,۲۷۱</td><td align="center" style="width:7.5%;">۵۵۴,۱۷۲</td>
+					</tr>
+				</table>
+			</div>
+                    </td>
+		</tr>
+		<tr>
+			<td colspan="17">
+                        <div id="ctl00_cphBody_ucBuilding1_ucProjStat_pnlBuildingProjStat">
+				
+        <script language="javascript" type="text/javascript" src="../../js/PKI.js"></script>
+        <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
+
+        <div id="ctl00_cphBody_ucBuilding1_ucProjStat_divBuildingStat" align="right" includeinexcel="true">
+            <table id="ctl00_cphBody_ucBuilding1_ucProjStat_Table1" cellpadding="0" cellspacing="0" border="0" align="right" dir="rtl" style="width:100%; border-collapse:collapse;">
+					<tr>
+						<td colspan="17">
+                        
+                    </td>
+					</tr>
+					<tr>
+						<td colspan="17">
+                        <br>
+                        <br>
+                      <span id="ctl00_cphBody_ucBuilding1_ucProjStat_Label13" style="font-size:Small;">آمار وضعیت تکمیل پروژه ها :</span>
+                    </td>
+					</tr>
+					<tr>
+						<td colspan="17">
+                        <table class="gv" id="tblBuildingStatHeader" style="width:100%; border-collapse:collapse;">
+                            <tr>
+                                <th rowspan="2">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderProjectName">نام پروژه</span>
+                                </th>
+                                <th rowspan="2" style="width: 6%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderProjectPlace">محل پروژه</span>
+                                </th>
+                                <th rowspan="2" style="width: 6%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderProjectUse">کاربری</span>
+                                </th>
+                                <th rowspan="2" style="width: 4%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderProjectOwnershipPercentage">درصد مالکیت</span>
+                                </th>
+                                <th rowspan="2" style="width: 4.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderProjectUnit">واحد</span>
+                                </th>
+                                <th rowspan="2" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderUsefulArea">زیربنای مفید</span>
+                                </th>
+
+                                <th colspan="4" style="height:33px;">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderPrevMonthStat">وضعیت در پایان ماه گذشته</span>
+                                </th>
+                                <th colspan="2">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderPrevMonthSold">پروژه های فروش رفته در طی ماه</span>
+                                </th>
+                                <th colspan="4">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderThisMonthStat">وضعیت در پایان ماه</span>
+                                </th>
+                                
+                            </tr>
+                            <tr>
+
+                                <th style="width: 4.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderPhysicalProgressPerPrevMonth">درصد پیشرفت فیزیکی</span>
+                                </th>
+                                <th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderAmountOfTheCostPrevMonth">مبلغ بهای تمام شده <br> (میلیون ریال)</span>
+                                </th>
+                                <th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderCostofPrevMonth">برآورد هزینه های تکمیل پروژه <br> (میلیون ریال)</span>
+                                </th>
+                                <th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderEstimatedCostPrevMonth">مبلغ بهای تمام شده برآوردی  <br> (میلیون ریال)</span>
+                                </th>
+                                <th style="width: 4%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderSoldAreaMetric">متراژ</span>
+                                </th>
+                                <th style="width: 7%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderSoldAmountCost">مبلغ بهای تمام شده <br> (میلیون ریال)</span>
+                                </th>
+                                <th style="width: 4.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderPhysicalProgressPerThisMonth">درصد پیشرفت فیزیکی</span>
+                                </th>
+                                <th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderAmountOfTheCostThisMonth">مبلغ بهای تمام شده <br> (میلیون ریال)</span>
+                                </th>
+                                <th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderCostofThisMonth">برآورد هزینه های تکمیل پروژه <br> (میلیون ریال)</span>
+                                </th>
+                                <th style="width: 7.5%">
+                                    <span id="ctl00_cphBody_ucBuilding1_ucProjStat_lblHeaderEstimatedCostThisMonth">مبلغ بهای تمام شده برآوردی <br> (میلیون ریال)</span>
+                                </th>
+                                
+                            </tr>
+                        </table>
+                    </td>
+					</tr>
+					<tr>
+						<td colspan="17">
+                            <div>
+							<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucBuilding1_ucProjStat_dgBuildingProjStat" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+								<tr>
+									<td align="center">ستاره مهرگان (قطعه 78-79)</td><td align="center" style="width:6%;">کيش</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۳۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۲۸,۲۳۰</td><td align="center" style="width:4.5%;">۳۷</td><td align="center" style="width:7.5%;">۱۷۳,۹۴۷</td><td align="center" style="width:7.5%;">۶۰,۰۰۳</td><td align="center" style="width:7.5%;">۲۳۳,۹۵۰</td><td align="center" style="width:4%;">۸۴</td><td align="center" style="width:7%;">۹۳۶</td><td align="center" style="width:4.5%;">۳۹</td><td align="center" style="width:7.5%;">۱۷۴,۸۴۹</td><td align="center" style="width:7.5%;">۵۹,۱۰۱</td><td align="center" style="width:7.5%;">۲۳۳,۹۵۰</td>
+								</tr><tr>
+									<td align="center">ستاره فروردين (قطعه 69)</td><td align="center" style="width:6%;">کيش</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۲۷</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۳۰,۵۹۲</td><td align="center" style="width:4.5%;">۶۸</td><td align="center" style="width:7.5%;">۲۵۱,۷۵۵</td><td align="center" style="width:7.5%;">۱۱,۵۰۲</td><td align="center" style="width:7.5%;">۲۶۳,۲۵۷</td><td align="center" style="width:4%;">۹۰</td><td align="center" style="width:7%;">۲,۱۵۶</td><td align="center" style="width:4.5%;">۷۰</td><td align="center" style="width:7.5%;">۲۵۲,۶۰۱</td><td align="center" style="width:7.5%;">۱۰,۶۵۶</td><td align="center" style="width:7.5%;">۲۶۳,۲۵۷</td>
+								</tr><tr>
+									<td align="center">ستاره آبان (قطعه 80)</td><td align="center" style="width:6%;">کيش</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۳۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۹,۲۶۹</td><td align="center" style="width:4.5%;">۷۱</td><td align="center" style="width:7.5%;">۴۷,۰۷۹</td><td align="center" style="width:7.5%;">۶۵,۷۳۶</td><td align="center" style="width:7.5%;">۱۱۲,۸۱۵</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۷۲</td><td align="center" style="width:7.5%;">۴۷,۳۲۴</td><td align="center" style="width:7.5%;">۶۵,۴۹۱</td><td align="center" style="width:7.5%;">۱۱۲,۸۱۵</td>
+								</tr><tr>
+									<td align="center">ستاره اسفند 1 (قطعه 84)</td><td align="center" style="width:6%;">کيش</td><td align="center" style="width:6%;">تجاري- اداري</td><td align="center" style="width:4%;">۵۵</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۳,۱۲۲</td><td align="center" style="width:4.5%;">۲۲</td><td align="center" style="width:7.5%;">۸۴,۴۳۵</td><td align="center" style="width:7.5%;">۶۶,۰۹۴</td><td align="center" style="width:7.5%;">۱۵۰,۵۲۹</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۲۲</td><td align="center" style="width:7.5%;">۸۵,۱۲۲</td><td align="center" style="width:7.5%;">۶۵,۴۰۷</td><td align="center" style="width:7.5%;">۱۵۰,۵۲۹</td>
+								</tr><tr>
+									<td align="center">ستاره اسفند 2 (قطعه 85)</td><td align="center" style="width:6%;">کيش</td><td align="center" style="width:6%;">تجاري- اداري</td><td align="center" style="width:4%;">۵۵</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۵,۰۶۴</td><td align="center" style="width:4.5%;">۲۳</td><td align="center" style="width:7.5%;">۸۸,۶۹۶</td><td align="center" style="width:7.5%;">۶۷,۸۷۹</td><td align="center" style="width:7.5%;">۱۵۶,۵۷۵</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۲۳</td><td align="center" style="width:7.5%;">۸۸,۹۳۱</td><td align="center" style="width:7.5%;">۶۷,۶۴۴</td><td align="center" style="width:7.5%;">۱۵۶,۵۷۵</td>
+								</tr><tr>
+									<td align="center">ستاره مرداد (قطعه 75) </td><td align="center" style="width:6%;">کيش</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۲۵</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۹,۶۷۰</td><td align="center" style="width:4.5%;">۵</td><td align="center" style="width:7.5%;">۸۸,۲۷۲</td><td align="center" style="width:7.5%;">۶۴,۱۳۶</td><td align="center" style="width:7.5%;">۱۵۲,۴۰۸</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۵</td><td align="center" style="width:7.5%;">۸۸,۹۰۴</td><td align="center" style="width:7.5%;">۶۳,۵۰۴</td><td align="center" style="width:7.5%;">۱۵۲,۴۰۸</td>
+								</tr><tr>
+									<td align="center">ستاره تيرگان(قطعه 74)</td><td align="center" style="width:6%;">کيش</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۹,۶۵۳</td><td align="center" style="width:4.5%;">۳</td><td align="center" style="width:7.5%;">۶۹,۴۱۴</td><td align="center" style="width:7.5%;">۱,۲۶۴,۸۳۶</td><td align="center" style="width:7.5%;">۱,۳۳۴,۲۵۰</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۳</td><td align="center" style="width:7.5%;">۶۷,۷۲۳</td><td align="center" style="width:7.5%;">۱,۲۶۶,۵۲۷</td><td align="center" style="width:7.5%;">۱,۳۳۴,۲۵۰</td>
+								</tr><tr>
+									<td align="center">مثلث</td><td align="center" style="width:6%;">شيراز</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۸,۴۵۴</td><td align="center" style="width:4.5%;">۱۰۰</td><td align="center" style="width:7.5%;">۷۴۱,۴۶۸</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۷۴۱,۴۶۸</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۱۰۰</td><td align="center" style="width:7.5%;">۷۴۱,۴۶۸</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۷۴۱,۴۶۸</td>
+								</tr><tr>
+									<td align="center">راين 1</td><td align="center" style="width:6%;">کرمان</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۹,۷۲۹</td><td align="center" style="width:4.5%;">۵۷</td><td align="center" style="width:7.5%;">۱۷۳,۵۵۲</td><td align="center" style="width:7.5%;">۱۴۱,۶۶۵</td><td align="center" style="width:7.5%;">۳۱۵,۲۱۷</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۵۷</td><td align="center" style="width:7.5%;">۱۷۶,۷۴۶</td><td align="center" style="width:7.5%;">۱۳۸,۴۷۱</td><td align="center" style="width:7.5%;">۳۱۵,۲۱۷</td>
+								</tr><tr>
+									<td align="center">بوتيا</td><td align="center" style="width:6%;">کرمان</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۳,۹۳۳</td><td align="center" style="width:4.5%;">۹۱</td><td align="center" style="width:7.5%;">۲۶۴,۴۳۹</td><td align="center" style="width:7.5%;">۲۲,۰۱۳</td><td align="center" style="width:7.5%;">۲۸۶,۴۵۲</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۹۱</td><td align="center" style="width:7.5%;">۲۶۴,۴۴۳</td><td align="center" style="width:7.5%;">۲۲,۰۰۹</td><td align="center" style="width:7.5%;">۲۸۶,۴۵۲</td>
+								</tr><tr>
+									<td align="center">وايه</td><td align="center" style="width:6%;">بوشهر</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۶,۵۷۳</td><td align="center" style="width:4.5%;">۳۰</td><td align="center" style="width:7.5%;">۸۸,۷۵۰</td><td align="center" style="width:7.5%;">۱۹۲,۵۳۷</td><td align="center" style="width:7.5%;">۲۸۱,۲۸۷</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۳۲</td><td align="center" style="width:7.5%;">۸۸,۸۷۱</td><td align="center" style="width:7.5%;">۱۹۲,۴۱۶</td><td align="center" style="width:7.5%;">۲۸۱,۲۸۷</td>
+								</tr><tr>
+									<td align="center">آژند</td><td align="center" style="width:6%;">کرمان</td><td align="center" style="width:6%;">تجاري- اداري</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۱,۱۱۹</td><td align="center" style="width:4.5%;">۳۸</td><td align="center" style="width:7.5%;">۴۶,۳۵۵</td><td align="center" style="width:7.5%;">۱۸,۹۵۲</td><td align="center" style="width:7.5%;">۶۵,۳۰۷</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۳۸</td><td align="center" style="width:7.5%;">۴۶,۱۷۳</td><td align="center" style="width:7.5%;">۱۹,۱۳۴</td><td align="center" style="width:7.5%;">۶۵,۳۰۷</td>
+								</tr><tr>
+									<td align="center">سايه </td><td align="center" style="width:6%;">شيراز</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۷۸</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۲۳,۹۲۴</td><td align="center" style="width:4.5%;">۸۹</td><td align="center" style="width:7.5%;">۷۸۰,۶۶۳</td><td align="center" style="width:7.5%;">۲۳,۳۰۳</td><td align="center" style="width:7.5%;">۸۰۳,۹۶۶</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۹۰</td><td align="center" style="width:7.5%;">۷۹۳,۰۲۸</td><td align="center" style="width:7.5%;">۱۰,۹۳۸</td><td align="center" style="width:7.5%;">۸۰۳,۹۶۶</td>
+								</tr><tr>
+									<td align="center">شار صدرا</td><td align="center" style="width:6%;">شيراز- صدرا</td><td align="center" style="width:6%;">مسکوني</td><td align="center" style="width:4%;">۸۲</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:4.5%;">۴</td><td align="center" style="width:7.5%;">۹۳,۲۶۹</td><td align="center" style="width:7.5%;">۱,۶۹۲,۸۷۶</td><td align="center" style="width:7.5%;">۱,۷۸۶,۱۴۵</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۴</td><td align="center" style="width:7.5%;">۹۴,۸۵۹</td><td align="center" style="width:7.5%;">۱,۶۹۱,۲۸۶</td><td align="center" style="width:7.5%;">۱,۷۸۶,۱۴۵</td>
+								</tr><tr>
+									<td align="center">آناهيتا</td><td align="center" style="width:6%;">شيراز</td><td align="center" style="width:6%;">&nbsp;</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۱۸۵</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td>
+								</tr><tr>
+									<td align="center">سروستان</td><td align="center" style="width:6%;">پرديس</td><td align="center" style="width:6%;">&nbsp;</td><td align="center" style="width:4%;">۱۰۰</td><td align="center" style="width:4.5%;">مترمربع</td><td align="center" style="width:5%;">۱۱۴</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:4%;">۰</td><td align="center" style="width:7%;">۰</td><td align="center" style="width:4.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td><td align="center" style="width:7.5%;">۰</td>
+								</tr><tr class="lightBlueBg">
+									<td align="center">جمع</td><td align="center" style="width:6%;">&nbsp;</td><td align="center" style="width:6%;">&nbsp;</td><td align="center" style="width:4%;"></td><td align="center" style="width:4.5%;">&nbsp;</td><td align="center" style="width:5%;"></td><td align="center" style="width:4.5%;"></td><td align="center" style="width:7.5%;">۲,۹۹۲,۰۹۴</td><td align="center" style="width:7.5%;">۳,۶۹۱,۵۳۲</td><td align="center" style="width:7.5%;">۶,۶۸۳,۶۲۶</td><td align="center" style="width:4%;">۱۷۴</td><td align="center" style="width:7%;">۳,۰۹۲</td><td align="center" style="width:4.5%;"></td><td align="center" style="width:7.5%;">۳,۰۱۱,۰۴۲</td><td align="center" style="width:7.5%;">۳,۶۷۲,۵۸۴</td><td align="center" style="width:7.5%;">۶,۶۸۳,۶۲۶</td>
+								</tr>
+							</table>
+						</div>
+                    </td>
+					</tr>
+				</table>
+				
+        </div>
+    
+			</div>
+
+                    </td>
+		</tr>
+	</table>
+	
+        </div>
+
+
+    
+</div>
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        <div id="ctl00_cphBody_divLetterDescriptionContainer">
+            
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1400/01/31</span></legend>
+                <br>
+                <span id="txbDescMonth">
+
+نظر به برآوردي بودن هزينه هاي تسهيمي و ذخاير هزينه اي موثر در قيمت تمام شده و محاسبه درصد پيشرفت ريالي، بخشي از اطلاعات فوق بابت برآوردها و ذخاير مذکور متاثر گرديده است.
+
+
+
+نظر به برآوردي بودن هزينه هاي تسهيمي و ذخاير هزينه اي موثر در قيمت تمام شده و محاسبه درصد پيشرفت ريالي، بخشي از اطلاعات فوق بابت برآوردها و ذخاير مذکور متاثر گرديده است
+
+</span>
+            </fieldset>
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1400/01/31</span></legend>
+                <br>
+                <span id="txbDescYear"></span>
+            </fieldset>
+        </div>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+</body>
+</html>
